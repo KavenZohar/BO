@@ -1,0 +1,1 @@
+export const D = ["khoá học online đang đợi bạn bơ học đấy, đừng lười nữa bạn ơi "];

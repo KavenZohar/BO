@@ -1,0 +1,1 @@
+export const C = ["học bài thôi bạn ơi "];

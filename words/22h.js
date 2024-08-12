@@ -1,0 +1,1 @@
+export const E = ["ngày hôm nay của bạn như thế nào "];

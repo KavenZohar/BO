@@ -1,0 +1,1 @@
+export const B = ["đừng quên bạn có việc cần làm "];

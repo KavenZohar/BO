@@ -1,0 +1,1 @@
+export const A = ["Chào buổi sáng, chúc bơ làm việc hiệu quả "];
