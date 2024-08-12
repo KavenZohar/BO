@@ -60,15 +60,15 @@ client.on("ready", () => {
             if (channel) {
                 channel.send(a[0] + userTag).catch(console.error);
             }
-        } else if (Hours === 9 && Minutes === 15) {
+        } else if (Hours === 12 && Minutes === 0) {
             if (channel) {
                 channel.send(b[0] + userTag).catch(console.error);
             }
-        } else if (Hours === 12 && Minutes === 0) {
+        } else if (Hours === 20 && Minutes === 45) {
             if (channel) {
                 channel.send(c[0] + userTag).catch(console.error);
             }
-        } else if (Hours === 20 && Minutes === 45) {
+        } else if (Hours === 21 && Minutes === 30) {
             if (channel) {
                 channel.send(d[0] + userTag).catch(console.error);
             }
