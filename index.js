@@ -44,6 +44,7 @@ setInterval( async () => {
     await axios.get('https://https-get.onrender.com');
 }, 20000);
 
+console.log("hello world");
 client.on("ready", () => {
     console.log(`${client.user.tag} is ready!`);
 
