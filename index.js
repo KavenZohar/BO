@@ -41,7 +41,9 @@ app.listen(PORT, () => {
 });
 
 setInterval( async () => {
-    await axios.get('https://https-get.onrender.com');
+    await axios.get('https://https-get.onrender.com').catch((error) => {
+        console.error(error);
+    });
 }, 20000);
 
 
