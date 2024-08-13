@@ -2,6 +2,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 import { Client, GatewayIntentBits } from "discord.js";
 import express from 'express';
+import axios from 'axios';
+
 import { A } from "./words/9h15.js";
 import { B } from "./words/12h.js";
 import { C } from "./words/20h45.js";
@@ -37,6 +39,10 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Project is running on port ${PORT}!`);
 });
+
+setInterval( async () => {
+    await axios.get('https://https-get.onrender.com');
+}, 20000);
 
 client.on("ready", () => {
     console.log(`${client.user.tag} is ready!`);
