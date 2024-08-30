@@ -42,12 +42,6 @@ app.listen(PORT, () => {
     console.log(`Project is running on port ${PORT}!`);
 });
 
-setInterval( async () => {
-    await axios.get('https://https-get.onrender.com').catch((error) => {
-        console.error(error);
-    });
-}, 20000);
-
 
 client.on("ready", () => {
     console.log(`${client.user.tag} is ready!`);
@@ -205,7 +199,7 @@ client.on("ready", () => {
                 }
                 break;
         }
-    }, 1000);
+    }, 60000);
 });
 
 function Embed(content) {
