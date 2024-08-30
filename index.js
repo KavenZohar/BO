@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
-import { Client, GatewayIntentBits } from "discord.js";
+import { Client, GatewayIntentBits, EmbedBuilder } from "discord.js";
 import express from 'express';
 import axios from 'axios';
 
@@ -10,6 +10,7 @@ import { C } from "./words/20h45.js";
 import { D } from "./words/21h30.js";
 import { E } from "./words/22h.js";
 import { F } from "./words/23h30.js";
+import { KPI } from "./words/kpi.js";
 
 const app = express();
 const client = new Client({
@@ -30,6 +31,7 @@ const c = C;
 const d = D;
 const e = E;
 const f = F;
+const kpi = KPI;
 
 app.get('/', (req, res) => {
     res.send('Kaven is online!');
@@ -66,31 +68,150 @@ client.on("ready", () => {
         const Minutes = parseInt(formattedMinutes, 10);
 
         if (Hours === 9 && Minutes === 15) {
+            let i = Math.floor(Math.random() * a.length);
             if (channel) {
-                channel.send(a[0] + userTag).catch(console.error);
+                channel.send({ 
+                    embed: [Embed(a[i] + userTag)]
+                }).catch(console.error);
             }
         } else if (Hours === 12 && Minutes === 0) {
+            let i = Math.floor(Math.random() * b.length);
             if (channel) {
-                channel.send(b[0] + userTag).catch(console.error);
+                channel.send({ 
+                    embed: [Embed(b[i] + userTag)]
+                }).catch(console.error);
             }
         } else if (Hours === 20 && Minutes === 45) {
+            let i = Math.floor(Math.random() * c.length);
             if (channel) {
-                channel.send(c[0] + userTag).catch(console.error);
+                channel.send({ 
+                    embed: [Embed(c[i] + userTag)]
+                }).catch(console.error);
             }
         } else if (Hours === 21 && Minutes === 30) {
+            let i = Math.floor(Math.random() * d.length);
             if (channel) {
-                channel.send(d[0] + userTag).catch(console.error);
+                channel.send({ 
+                    embed: [Embed(d[i] + userTag)]
+                }).catch(console.error);
             }
         } else if (Hours === 22 && Minutes === 0) {
+            let i = Math.floor(Math.random() * e.length);
             if (channel) {
-                channel.send(e[0] + userTag).catch(console.error);
+                channel.send({ 
+                    embed: [Embed(e[i] + userTag)]
+                }).catch(console.error);
             }
         } else if (Hours === 23 && Minutes === 30) {
+            let i = Math.floor(Math.random() * f.length);
             if (channel) {
-                channel.send(f[0] + userTag).catch(console.error);
+                channel.send({ 
+                    embed: [Embed(f[i] + userTag)]
+                }).catch(console.error);
             }
         }
-    }, 60000);
+        const y = `${Hours}${Minutes}`;
+        switch (y) {
+            case "530":
+                if (channel) {
+                    channel.send({ 
+                        embed: [Embed(kpi[1] + userTag)]
+                    }).catch(console.error);
+                }
+                break;
+
+            case "930":
+                if (channel) {
+                    channel.send({ 
+                        embed: [Embed(kpi[0] + userTag)]
+                    }).catch(console.error);
+                }
+                break;
+            case "1130":
+                if (channel) {
+                    channel.send({ 
+                        embed: [Embed(kpi[0] + userTag)]
+                    }).catch(console.error);
+                }
+                break;
+            case "1345":
+                if (channel) {
+                    channel.send({ 
+                        embed: [Embed(kpi[0] + userTag)]
+                    }).catch(console.error);
+                }
+                break;
+            case "1430":
+                if (channel) {
+                    channel.send({ 
+                        embed: [Embed(kpi[0] + userTag)]
+                    }).catch(console.error);
+                }
+                break;
+            case "1538":
+                if (channel) {
+                    channel.send({ 
+                        embed: [Embed(kpi[0] + userTag)]
+                    }).catch(console.error);
+                }
+                break;
+            case "1620":
+                if (channel) {
+                    channel.send({ 
+                        embed: [Embed(kpi[0] + userTag)]
+                    }).catch(console.error);
+                }
+                break;
+            case "1730":
+                if (channel) {
+                    channel.send({ 
+                        embed: [Embed(kpi[0] + userTag)]
+                    }).catch(console.error);
+                }
+                break;
+            case "1845":
+                if (channel) {
+                    channel.send({ 
+                        embed: [Embed(kpi[0] + userTag)]
+                    }).catch(console.error);
+                }
+                break;
+            case "2010":
+                if (channel) {
+                    channel.send({ 
+                        embed: [Embed(kpi[0] + userTag)]
+                    }).catch(console.error);
+                }
+                break;
+            case "2120":
+                if (channel) {
+                    channel.send({ 
+                        embed: [Embed(kpi[0] + userTag)]
+                    }).catch(console.error);
+                }
+                break;
+            case "2200":
+                if (channel) {
+                    channel.send({ 
+                        embed: [Embed(kpi[0] + userTag)]
+                    }).catch(console.error);
+                }
+                break;
+            case "2300":
+                if (channel) {
+                    channel.send({ 
+                        embed: [Embed(kpi[0] + userTag)]
+                    }).catch(console.error);
+                }
+                break;
+        }
+    }, 1000);
 });
+
+function Embed(content) {
+    return new EmbedBuilder()
+        .setColor('#E85C0D')
+        .setDescription(content);
+}
 
 client.login(TOKEN);

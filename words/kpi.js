@@ -1,0 +1,1 @@
+export const KPI = ["Bơ ơi! Chạy số đi, tháng này không đủ kpi rồi", "Bơ ơi, bạn ơi dậy đi"];
