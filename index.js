@@ -22,8 +22,8 @@ const client = new Client({
 });
 
 const TOKEN = process.env.DISCORD_TOKEN;
-const channelId = "1249765182071373878";
-const userTag = "<@792563964067708959>";
+const channelId = "1259522254619017278";
+const userTag = "<@810103122159730738>";
 
 const a = A;
 const b = B;
@@ -61,151 +61,116 @@ client.on("ready", () => {
         const Hours = parseInt(formattedHours, 10);
         const Minutes = parseInt(formattedMinutes, 10);
 
-        if (Hours === 9 && Minutes === 15) {
-            let i = Math.floor(Math.random() * a.length);
-            if (channel) {
-                channel.send({ 
-                    embed: [Embed(a[i] + userTag)]
-                }).catch(console.error);
+        try {
+            if (Hours === 9 && Minutes === 15) {
+                let i = Math.floor(Math.random() * a.length);
+                if (channel) {
+                    channel.send(a[i] + userTag);
+                }
+            } else if (Hours === 12 && Minutes === 0) {
+                let i = Math.floor(Math.random() * b.length);
+                if (channel) {
+                    channel.send(b[i] + userTag);
+                }
+            } else if (Hours === 20 && Minutes === 45) {
+                let i = Math.floor(Math.random() * c.length);
+                if (channel) {
+                    channel.send(c[i] + userTag);
+                }
+            } else if (Hours === 21 && Minutes === 30) {
+                let i = Math.floor(Math.random() * d.length);
+                if (channel) {
+                    channel.send(d[i] + userTag);
+                }
+            } else if (Hours === 22 && Minutes === 0) {
+                let i = Math.floor(Math.random() * e.length);
+                if (channel) {
+                    channel.send(e[i] + userTag);
+                }
+            } else if (Hours === 23 && Minutes === 30) {
+                let i = Math.floor(Math.random() * f.length);
+                if (channel) {
+                    channel.send(f[i] + userTag);
+                }
             }
-        } else if (Hours === 12 && Minutes === 0) {
-            let i = Math.floor(Math.random() * b.length);
-            if (channel) {
-                channel.send({ 
-                    embed: [Embed(b[i] + userTag)]
-                }).catch(console.error);
-            }
-        } else if (Hours === 20 && Minutes === 45) {
-            let i = Math.floor(Math.random() * c.length);
-            if (channel) {
-                channel.send({ 
-                    embed: [Embed(c[i] + userTag)]
-                }).catch(console.error);
-            }
-        } else if (Hours === 21 && Minutes === 30) {
-            let i = Math.floor(Math.random() * d.length);
-            if (channel) {
-                channel.send({ 
-                    embed: [Embed(d[i] + userTag)]
-                }).catch(console.error);
-            }
-        } else if (Hours === 22 && Minutes === 0) {
-            let i = Math.floor(Math.random() * e.length);
-            if (channel) {
-                channel.send({ 
-                    embed: [Embed(e[i] + userTag)]
-                }).catch(console.error);
-            }
-        } else if (Hours === 23 && Minutes === 30) {
-            let i = Math.floor(Math.random() * f.length);
-            if (channel) {
-                channel.send({ 
-                    embed: [Embed(f[i] + userTag)]
-                }).catch(console.error);
-            }
+        } catch (e) {
+            console.error(e);
         }
-        const y = `${Hours}${Minutes}`;
-        switch (y) {
-            case "530":
-                if (channel) {
-                    channel.send({ 
-                        embed: [Embed(kpi[1] + userTag)]
-                    }).catch(console.error);
-                }
-                break;
 
-            case "930":
-                if (channel) {
-                    channel.send({ 
-                        embed: [Embed(kpi[0] + userTag)]
-                    }).catch(console.error);
-                }
-                break;
-            case "1130":
-                if (channel) {
-                    channel.send({ 
-                        embed: [Embed(kpi[0] + userTag)]
-                    }).catch(console.error);
-                }
-                break;
-            case "1345":
-                if (channel) {
-                    channel.send({ 
-                        embed: [Embed(kpi[0] + userTag)]
-                    }).catch(console.error);
-                }
-                break;
-            case "1430":
-                if (channel) {
-                    channel.send({ 
-                        embed: [Embed(kpi[0] + userTag)]
-                    }).catch(console.error);
-                }
-                break;
-            case "1538":
-                if (channel) {
-                    channel.send({ 
-                        embed: [Embed(kpi[0] + userTag)]
-                    }).catch(console.error);
-                }
-                break;
-            case "1620":
-                if (channel) {
-                    channel.send({ 
-                        embed: [Embed(kpi[0] + userTag)]
-                    }).catch(console.error);
-                }
-                break;
-            case "1730":
-                if (channel) {
-                    channel.send({ 
-                        embed: [Embed(kpi[0] + userTag)]
-                    }).catch(console.error);
-                }
-                break;
-            case "1845":
-                if (channel) {
-                    channel.send({ 
-                        embed: [Embed(kpi[0] + userTag)]
-                    }).catch(console.error);
-                }
-                break;
-            case "2010":
-                if (channel) {
-                    channel.send({ 
-                        embed: [Embed(kpi[0] + userTag)]
-                    }).catch(console.error);
-                }
-                break;
-            case "2120":
-                if (channel) {
-                    channel.send({ 
-                        embed: [Embed(kpi[0] + userTag)]
-                    }).catch(console.error);
-                }
-                break;
-            case "2200":
-                if (channel) {
-                    channel.send({ 
-                        embed: [Embed(kpi[0] + userTag)]
-                    }).catch(console.error);
-                }
-                break;
-            case "2300":
-                if (channel) {
-                    channel.send({ 
-                        embed: [Embed(kpi[0] + userTag)]
-                    }).catch(console.error);
-                }
-                break;
+        const y = `${Hours}${Minutes}`;
+        try {
+            switch (y) {
+                case "530":
+                    if (channel) {
+                        channel.send(kpi[0] + userTag);
+                    }
+                    break;
+    
+                case "930":
+                    if (channel) {
+                        channel.send(kpi[0] + userTag);
+                    }
+                    break;
+                case "1130":
+                    if (channel) {
+                        channel.send(kpi[0] + userTag);
+                    }
+                    break;
+                case "1345":
+                    if (channel) {
+                        channel.send(kpi[0] + userTag);
+                    }
+                    break;
+                case "1430":
+                    if (channel) {
+                        channel.send(kpi[0] + userTag);
+                    }
+                    break;
+                case "1538":
+                    if (channel) {
+                        channel.send(kpi[0] + userTag);
+                    }
+                    break;
+                case "1620":
+                    if (channel) {
+                        channel.send(kpi[0] + userTag);
+                    }
+                    break;
+                case "1730":
+                    if (channel) {
+                        channel.send(kpi[0] + userTag);
+                    }
+                    break;
+                case "1845":
+                    if (channel) {
+                        channel.send(kpi[0] + userTag);
+                    }
+                    break;
+                case "2010":
+                    if (channel) {
+                        channel.send(kpi[0] + userTag);
+                    }
+                    break;
+                case "2120":
+                    if (channel) {
+                        channel.send(kpi[0] + userTag);
+                    }
+                    break;
+                case "2200":
+                    if (channel) {
+                        channel.send(kpi[0] + userTag);
+                    }
+                    break;
+                case "2300":
+                    if (channel) {
+                        channel.send(kpi[0] + userTag);
+                    }
+                    break;
+            }
+        } catch (e) {
+            console.error(e);
         }
     }, 60000);
 });
-
-function Embed(content) {
-    return new EmbedBuilder()
-        .setColor('#E85C0D')
-        .setDescription(content);
-}
 
 client.login(TOKEN);
